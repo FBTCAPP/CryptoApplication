@@ -20,9 +20,6 @@ function KriptoDetail(props) {
                             </View>
                             <Text style={styles.text}>{props.Type}</Text>
                         </View>
-                        
-                        
-                        
                     </View>
                 </View>
             </>
