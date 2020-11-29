@@ -1,24 +1,23 @@
 import React,{useEffect,useState} from 'react'
 import {View,Text,ScrollView} from 'react-native'
 import axios from 'axios'
-import KriptoDetail from './KriptoDetail';
+import KriptoDetail from '../src/components/KriptoDetail';
 function KriptoList() {
-    const [kripto,setKripto]=useState(initialKripto);
+    const [kripto,setKripto]=useState({});
     useEffect(()=>{
-        console.log("req")
         axios.get("https://www.paribu.com/ticker")
         .then( res => setKripto(res.data))
         .catch( err=> console.log(err))
     },[])
     useEffect(()=>{
         const interval = setInterval(() => {
-        console.log("req")
         axios.get("https://www.paribu.com/ticker")
         .then( res => setKripto(res.data))
         .catch( err=> console.log(err))
     }, 15000);
         return () => clearInterval(interval);
     },[])
+    if(Object.keys(kripto).length > 0){
     return (
         <View>
             <ScrollView persistentScrollbar={true}>
@@ -39,24 +38,10 @@ function KriptoList() {
                 <KriptoDetail token={kripto.CHZ_TL} Type="Chiliz (CHZ)" icon="pepper-hot" color="#c9152c"/>
             </ScrollView>
         </View>
-    )
+    )}
+    else{
+        return(<></>)
+    }
 }
-const initialKripto={
-    "BTC_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "ETH_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "XRP_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "ADA_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "USDT_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "XTZ_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "ATOM_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "TRX_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "WAVES_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "BAT_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "XLM_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "BCH_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "NEO_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "EOS_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "DOGE_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    "CHZ_TL":{"lowestAsk":0,"highestBid":0,"low24hr":0,"high24hr":0,"avg24hr":0,"volume":0,"last":0,"change":0,"percentChange":0},
-    };
+
 export default KriptoList
