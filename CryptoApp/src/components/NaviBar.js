@@ -11,7 +11,7 @@ function NaviBar() {
             <View style={{flexDirection:"row",padding:Height/40,paddingLeft:Height/50,paddingRight:Height/50,justifyContent:"space-between",alignItems:"center"}}>
                 <FontAwesome5 size={30} name={'coins'} color="#fbd208"/>
                 <Text style={{fontWeight:"bold",fontSize:30,color:"#fff"}}>
-                    CRYPTO App
+                    CRYPTO
                 </Text>
                 <TouchableWithoutFeedback onPress={() => setToggle(!toggle)}>
                     {

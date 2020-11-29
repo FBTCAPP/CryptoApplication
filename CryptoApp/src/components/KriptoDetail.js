@@ -16,7 +16,7 @@ function KriptoDetail(props) {
                             <View style={{width:45,alignItems:"center"}}>
                                 <FontAwesome5 size={30} name={props.icon} color={props.color}/>
                             </View>
-                            <Text style={styles.text}>{ props.Type}</Text>
+                            <Text style={styles.text}>{props.Type}</Text>
                         </View>
                         
                         <View style={{display:"flex"}}>
@@ -30,9 +30,20 @@ function KriptoDetail(props) {
                     {
                     detay ? (
                         <View style={styles.detailCard}>
-                            <Text style={{color:"#f00",fontWeight:"bold"}}>{props.token.low24hr}</Text>
-                            <Text style={{color:"#ff8300",fontWeight:"bold"}}>{String(props.token.avg24hr).substring(0,String(props.token.avg24hr).indexOf(".")+3)}</Text>
-                            <Text style={{color:"#008000",fontWeight:"bold"}}>{props.token.high24hr}</Text>
+                            <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",flex:1}}>
+                                    <Text style={{color:"#000",fontWeight:"bold"}}>24S En Düşük:</Text>
+                                 <Text style={{color:"#f00",fontWeight:"bold"}}>{props.token.low24hr}</Text>
+                            </View>
+                            
+                            <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",flex:1}}>
+                                <Text style={{color:"#000",fontWeight:"bold"}}>24S Ortalama:</Text>
+                                <Text style={{color:"#ff8300",fontWeight:"bold"}}>{String(props.token.avg24hr).substring(0,String(props.token.avg24hr).indexOf(".")+3)}</Text>
+                            </View>
+
+                            <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",flex:1}}>
+                                <Text style={{color:"#000",fontWeight:"bold"}}>24S En Yüksek:</Text>
+                                <Text style={{color:"#008000",fontWeight:"bold"}}>{props.token.high24hr}</Text>
+                            </View>
                         </View>
                     )
                     :(<></>)
@@ -68,14 +79,14 @@ const styles= StyleSheet.create({
     detailCard:{
         justifyContent:"space-between",
         display:"flex",
-        alignItems:"center",
-        flexDirection:"row",
+        flexDirection:"column",
         marginTop:Height/50,
         marginLeft:Width/50,
         marginRight:Width/50,
         borderWidth:0.5,
         borderTopColor:"#A9A9A9",
-        borderColor:"#fff"
+        borderColor:"#fff",
+        paddingTop:Height/50
     }
 })
 export default KriptoDetail

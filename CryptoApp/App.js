@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar,ScrollView  } from 'react-native';
-import KriptoList from './src/components/KriptoList';
+import Exchange from './pages/Exchange';
+import KriptoList from './pages/Kriptolar';
 import NaviBar from './src/components/NaviBar';
 
 export default function App() {
@@ -9,7 +10,7 @@ export default function App() {
       <StatusBar style="auto"/>
         <ScrollView persistentScrollbar={true}>
             <NaviBar/>
-            <KriptoList/>
+            <Exchange/>
         </ScrollView>
     </View>
   );
