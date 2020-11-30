@@ -5,14 +5,12 @@ import KriptoDetail from './KriptoDetail';
 function KriptoList() {
     const [kripto,setKripto]=useState({});
     useEffect(()=>{
-        console.log("req")
         axios.get("https://www.paribu.com/ticker")
         .then( res => setKripto(res.data))
         .catch( err=> console.log(err))
     },[])
     useEffect(()=>{
         const interval = setInterval(() => {
-        console.log("req")
         axios.get("https://www.paribu.com/ticker")
         .then( res => setKripto(res.data))
         .catch( err=> console.log(err))
@@ -33,7 +31,7 @@ function KriptoList() {
                 <KriptoDetail token={kripto.TRX_TL} Type="Tron (TRX)" icon="dice-d20" color="#fb604a"/>
                 <KriptoDetail token={kripto.WAVES_TL} Type="Waves (WAVES)" icon="wind" color="#15aabf"/>
                 <KriptoDetail token={kripto.XLM_TL} Type="Stellar (XLM)" icon="rocket" color="#7900f7"/>
-                <KriptoDetail token={kripto.BCH_TL} Type="Bitcoin Cash (BCH)" icon="bitcoin" color="#4ac445"/>
+                <KriptoDetail token={kripto.BCH_TL} Type="Bitcoin Cash (BCH)" icon="money-bill-alt" color="#4ac445"/>
                 <KriptoDetail token={kripto.NEO_TL} Type="Neo (NEO)" icon="cube" color="#4ac445"/>
                 <KriptoDetail token={kripto.EOS_TL} Type="Eos (EOS)" icon="dice-d20" color="#34437f"/>
                 <KriptoDetail token={kripto.DOGE_TL} Type="Dogecoin (DOGE)" icon="paw" color="#d0af2c"/>

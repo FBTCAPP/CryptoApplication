@@ -25,8 +25,8 @@ function NaviBar({navigation}) {
             {
                 toggle ? (
                     <View style={{borderWidth:0.25,borderColor:"#232632",borderTopColor:"#d8d8d8"}}>
-                        <Text style={styles.texts} onPress={() => navigation.navigate('KriptoList')}>Ana Sayfa</Text>
-                        <Text style={styles.texts} onPress={() => navigation.navigate('ExchangeP')}>Birim Çevirici</Text>
+                        <Text style={styles.texts} onPress={() => {setToggle(false),navigation.navigate('KriptoList')}}>Ana Sayfa</Text>
+                        <Text style={styles.texts} onPress={() => {setToggle(false),navigation.navigate('ExchangeP')}}>Birim Çevirici</Text>
                         <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",marginBottom:25}}>
                             <FontAwesome5 onPress={() => Linking.openURL('http://www.twitter.com')} size={30} name={'twitter'} color="#d8d8d8" style={{padding:15}}/>
                             <FontAwesome5 onPress={() => Linking.openURL('http://www.facebook.com')} size={30} name={'facebook'} color="#d8d8d8" style={{padding:15}}/>

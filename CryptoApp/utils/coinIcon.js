@@ -31,7 +31,7 @@ export const Icon= (id) => {
             return "rocket"
             break;
         case "BCH_TL":
-            return "bitcoin"
+            return "money-bill-alt"
             break;
         case "NEO_TL":
             return "cube"

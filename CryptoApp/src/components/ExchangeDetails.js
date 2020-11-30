@@ -62,7 +62,7 @@ function ExchangeDetails() {
             </View>
             <View>
                         {Object.keys(kripto).map((key,id) => (Name(key) !== "" &&
-                                <KED Type={Name(key)} icon={Icon(key)}
+                                <KED key={id} Type={Name(key)} icon={Icon(key)}
                                     color={Color(key)}
                                     deger={((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last) > 0.00005 ? String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).substring(0,String(kripto[selectedValue].last/kripto[key].last).indexOf(".")+6) : "< 0.00005"}
                                 />
