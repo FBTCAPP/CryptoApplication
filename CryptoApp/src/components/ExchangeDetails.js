@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import {View,Picker,Dimensions, Text,TextInput} from 'react-native'
+import {View,Picker,Dimensions,TextInput} from 'react-native'
 import axios from 'axios'
 import {Name} from '../../utils/coinName'
 import {Icon} from '../../utils/coinIcon'
@@ -27,18 +27,18 @@ function ExchangeDetails() {
     if(Object.keys(kripto).length > 0){
     return (
         <View style={{backgroundColor:"#fff"}}>
-            <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",padding:10,borderWidth:1,borderColor:"#fff",borderBottomColor:"#000"}}>
+            <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",margin:10}}>
 
-                    <View style={{borderWidth:1,margin:0,padding:0,borderRadius:10,flexDirection:"row"}}>
+                    <View style={{borderRadius:8,flexDirection:"row",elevation: 3}}>
                         <TextInput
-                                style={{textAlign:"center",fontSize:30,paddingLeft:20,paddingRight:10}}
+                                style={{textAlign:"center",fontSize:30,paddingLeft:30,paddingRight:10}}
                                 placeholder={String(value)}
                                 onChangeText={text => setValue(text)}
                                 defaultValue={value}
                         />
                         <Picker
                             selectedValue={selectedValue}
-                            style={{ height: 50, width: Width/2 }}
+                            style={{ height: 50, width: Width/2}}
                             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                         >
                             <Picker.Item label="Bitcoin (BTC)" value="BTC_TL" />
@@ -64,7 +64,16 @@ function ExchangeDetails() {
                         {Object.keys(kripto).map((key,id) => (Name(key) !== "" &&
                                 <KED key={id} Type={Name(key)} icon={Icon(key)}
                                     color={Color(key)}
-                                    deger={((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last) > 0.00005 ? String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).substring(0,String(kripto[selectedValue].last/kripto[key].last).indexOf(".")+6) : "< 0.00005"}
+                                    deger={
+                                        (((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)) > 0.00005 
+                                        ? (   String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).includes(".") 
+                                                ? ((((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)) > 1 
+                                                    ? String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).substring(0,String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).indexOf(".")+3) 
+                                                    : String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).substring(0,String(((kripto[selectedValue].last)*parseFloat(value))/(kripto[key].last)).indexOf(".")+6)
+                                                ):(kripto[selectedValue].last)*parseFloat(value)/(kripto[key].last)
+                                        ) 
+                                        : "< 0.00005"
+                                    }
                                 />
                             )
                         )

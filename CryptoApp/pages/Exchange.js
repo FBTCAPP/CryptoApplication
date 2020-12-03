@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Text, ScrollView} from 'react-native'
+import {ScrollView} from 'react-native'
 import NaviBar from '../src/components/NaviBar'
 import ExchangeDetails from '../src/components/ExchangeDetails'
 function Exchange({navigation}) {

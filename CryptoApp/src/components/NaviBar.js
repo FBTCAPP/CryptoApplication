@@ -7,18 +7,18 @@ const Width=Dimensions.get("window").width;
 function NaviBar({navigation}) {
     const [toggle,setToggle]=useState(false);
     return (
-        <View style={{backgroundColor:"#232632"}}>
+        <View style={{backgroundColor:"#3f64a6",marginBottom:7}}>
             <View style={{flexDirection:"row",padding:Height/40,paddingLeft:Height/50,paddingRight:Height/50,justifyContent:"space-between",alignItems:"center"}}>
-                <FontAwesome5 size={30} name={'coins'} color="#fbd208"/>
+                <FontAwesome5 size={30} name={'coins'} style={{paddingLeft:10}} color="#fbd208"/>
                 <Text style={{fontWeight:"bold",fontSize:30,color:"#fff"}}>
                     CRYPTO
                 </Text>
                 <TouchableWithoutFeedback onPress={() => setToggle(!toggle)}>
                     {
                         toggle ? (
-                            <FontAwesome5 size={30} name={'bars'} color="#fff"/>
+                            <FontAwesome5 size={30}  name={'arrow-circle-up'} color="#fff"/>
                         ) :
-                        (<FontAwesome5 size={30} name={'bars'} color="#fff"/>)
+                        (<FontAwesome5 size={30}  name={'bars'} color="#fff"/>)
                     }
                 </TouchableWithoutFeedback>
             </View>

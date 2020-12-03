@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import {View,Text,ScrollView} from 'react-native'
+import {View,ScrollView} from 'react-native'
 import axios from 'axios'
 import KriptoDetail from './KriptoDetail';
 function KriptoList() {
@@ -19,7 +19,7 @@ function KriptoList() {
     },[])
     if(Object.keys(kripto).length > 0){
     return (
-        <View>
+        <View style={{backgroundColor:"#f2f3f8"}}>
             <ScrollView persistentScrollbar={true}>
                 <KriptoDetail token={kripto.BTC_TL} Type="Bitcoin (BTC)" icon="bitcoin" color="#ff8300"/>
                 <KriptoDetail token={kripto.ETH_TL} Type="Ethereum (ETH)" icon="ethereum" color="#3C3C3D"/>

@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "newKripto",
-    "slug": "newKripto",
+    "name": "Kripto Takip ve Çeviri",
+    "slug": "kripto-takip-ve-ceviri",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/fbtcapp_logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/fbtcapp_logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#11192B"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,12 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+        "foregroundImage": "./assets/fbtcapp_logo.png",
+        "backgroundColor": "#11192B"
+      },
+      "package": "com.fbtproje.kriptotakipvecevir"
     }
   }
 }

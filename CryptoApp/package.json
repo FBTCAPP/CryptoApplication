@@ -19,14 +19,10 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-reanimated": "^1.13.2",
-    "react-native-router-flux": "^4.2.0",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.15.0",
-    "react-native-sqlite-storage": "^5.0.0",
     "react-native-vector-icons": "^7.1.0",
     "react-native-web": "~0.13.12",
-    "react-navigation": "^4.4.3",
-    "react-navigation-stack": "^2.10.2",
     "expo-sqlite": "~8.4.0"
   },
   "devDependencies": {

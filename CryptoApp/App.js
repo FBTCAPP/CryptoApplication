@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, StatusBar,ScrollView  } from 'react-native';
-import Exchange from './pages/Exchange';
-import NaviBar from './src/components/NaviBar';
+import { StatusBar  } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Kriptolar from './pages/KriptoPage'
