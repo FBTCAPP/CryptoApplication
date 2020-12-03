@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Kripto Takip ve Çeviri",
+    "slug": "kripto-takip-ve-ceviri",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/fbtcapp_logo.png",
+    "splash": {
+      "image": "./assets/fbtcapp_logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#11192B"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/fbtcapp_logo.png",
+        "backgroundColor": "#11192B"
+      },
+      "package": "com.fbtproje.kriptotakipvecevir"
+    }
+  }
+}
