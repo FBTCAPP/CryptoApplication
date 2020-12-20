@@ -5,7 +5,11 @@ Bu dosyalar büyüklüğü ve ulaşım kolaylığı nedeniyle github projesi iç
 Uygulama Geliştiricileri
 
 Ali TUNÇ
+
 Taha Berkay SAKALLI
+
 Yasin KAHVECİ
+
 Şahin ÇAYIRLI
+
 Elyase Tunahan SAĞLAM
